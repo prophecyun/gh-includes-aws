@@ -16,8 +16,8 @@ jobs:
       - name: merge pull requests (automerge-action)
         uses: pascalgn/automerge-action@v0.16.3
         id: merge
+        env: github_token: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           source: 'dev'
           target: 'main'
       - name: AWS Creds
